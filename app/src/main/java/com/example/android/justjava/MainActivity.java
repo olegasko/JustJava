@@ -24,8 +24,23 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String priceMessage = "Total: $" + quantity * 5 + "\nThank you!";
-        displayMessage(priceMessage);
+        displayMessage(createOrderSummary(quantity));
+    }
+
+    /**
+     * Calculates the price of the order.
+     *
+     * @param quantity is the number of cups of coffee ordered
+     */
+    private int calculatePrice(int quantity) {
+        return quantity * 5;
+    }
+
+    private String createOrderSummary(int quantity) {
+        return "Name: Oleg Konichenko\n"
+                + "Quantity: " + quantity + "\n"
+                + "Total: $" + calculatePrice(quantity) + "\n"
+                + "Thank you!";
     }
 
     public void increment(View view) {
@@ -47,18 +62,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText("Total: " + NumberFormat.getCurrencyInstance().format(number));
-    }
-
-    /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
 }
