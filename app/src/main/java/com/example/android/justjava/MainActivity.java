@@ -3,6 +3,7 @@ package com.example.android.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String createOrderSummary(int quantity) {
         return "Name: Oleg Konichenko\n"
+                + "Add whipped cream? " + addTopping() +"\n"
                 + "Quantity: " + quantity + "\n"
                 + "Total: $" + calculatePrice(quantity) + "\n"
                 + "Thank you!";
@@ -59,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
     private void display(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
+    }
+
+    private boolean addTopping() {
+        CheckBox whippedCream = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        return whippedCream.isChecked();
     }
 
     /**
