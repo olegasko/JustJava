@@ -6,8 +6,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
-
 /**
  * This app displays an order form to order coffee.
  */
@@ -39,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
     private String createOrderSummary(int quantity) {
         return "Name: Oleg Konichenko\n"
-                + "Add whipped cream? " + addTopping() +"\n"
+                + "Add whipped cream? " + addWhippedCream() +"\n"
+                + "Add chocolate? " + addChocolate() +"\n"
                 + "Quantity: " + quantity + "\n"
                 + "Total: $" + calculatePrice(quantity) + "\n"
                 + "Thank you!";
@@ -63,9 +62,14 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + number);
     }
 
-    private boolean addTopping() {
+    private boolean addWhippedCream() {
         CheckBox whippedCream = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         return whippedCream.isChecked();
+    }
+
+    private boolean addChocolate() {
+        CheckBox chocolate = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        return chocolate.isChecked();
     }
 
     /**
