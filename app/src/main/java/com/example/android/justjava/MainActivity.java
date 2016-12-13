@@ -49,12 +49,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String createOrderSummary(int quantity) {
-        return "Name: " + getName() + "\n"
-                + "Whipped cream: $" + addWhippedCream() +"\n"
-                + "Chocolate: $" + addChocolate() +"\n"
-                + "Quantity: " + quantity + "\n"
-                + "Total: $" + calculatePrice(quantity) + "\n"
-                + "Thank you!";
+        return getString(R.string.name) + ": " + getName() + "\n"
+                + getString(R.string.whipped_cream) + ": $" + addWhippedCream() +"\n"
+                + getString(R.string.chocolate) + ": $" + addChocolate() +"\n"
+                + getString(R.string.quantity) + ": " + quantity + "\n"
+                + getString(R.string.total) + ": $" + calculatePrice(quantity) + "\n"
+                + getString(R.string.thank_you);
     }
 
     public void increment(View view) {
