@@ -16,7 +16,7 @@
             android:id="@+id/name_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name:"
+            android:hint="@string/name"
             android:inputType="textCapWords"/>
 
         <TextView
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="toppings"
+            android:text="@string/toppings"
             android:textAllCaps="true" />
 
         <CheckBox
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
-            android:text="Whipped cream"
+            android:text="@string/whipped_cream"
             android:textSize="16sp" />
 
         <CheckBox
@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
-            android:text="Chocolate"
+            android:text="@string/chocolate"
             android:textSize="16sp" />
 
         <TextView
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
-            android:text="quantity"
+            android:text="@string/quantity"
             android:textAllCaps="true" />
 
         <LinearLayout
@@ -88,14 +88,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="order summary"
+            android:text="@string/order_summary"
             android:textAllCaps="true" />
 
         <TextView
             android:id="@+id/order_summary_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total: $10"
+            android:text="@string/total"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -104,6 +104,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="submitOrder"
-            android:text="Order" />
+            android:text="@string/order" />
     </LinearLayout>
 </ScrollView>
